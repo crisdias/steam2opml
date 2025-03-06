@@ -30,6 +30,7 @@ This PHP script generates an OPML file containing RSS news feeds for all games o
 - Enter your Steam username or SteamID64.
 - Click "Generate OPML".
 - The script will fetch your owned games and provide an OPML file with links to the Steam news feeds for each game.
+- Download the OPML file and import it into your RSS reader, or link to it directly into your feed app like FreshRSS.
 
 ## Example OPML Output
 ```xml
