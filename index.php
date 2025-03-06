@@ -64,6 +64,7 @@ if ($response === false) {
 $data = json_decode($response, true);
 $games = $data['response']['games'] ?? [];
 
+
 // Gera o OPML
 $opml = "<?xml version='1.0' encoding='UTF-8'?>\n";
 $opml .= "<opml version='1.0'>\n";
@@ -77,7 +78,8 @@ foreach ($games as $game) {
     $gameId = $game['appid'];
     $gameName = htmlspecialchars($game['name'], ENT_QUOTES | ENT_XML1, 'UTF-8');
     $feedUrl = "https://store.steampowered.com/feeds/news/app/$gameId/";
-    $opml .= "      <outline text=\"$gameName News\" type='rss' xmlUrl='$feedUrl' />\n";
+    $opml .= "      <outline text=\"$gameName | News\" type=\"rss\" xmlUrl=\"$feedUrl\" description=\"$gameName\" />\n";
+    break;
 }
 
 $opml .= "    </outline>\n";
